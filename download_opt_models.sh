@@ -17,7 +17,7 @@ for MODEL_NAME in "${MODELS[@]}"; do
         echo "Starting or resuming download of $MODEL_NAME to $LOCAL_DIR..."
 
         # 执行huggingface-cli的下载命令
-        huggingface-cli download --resume-download --local-dir $LOCAL_DIR --local-dir-use-symlinks False $MODEL_NAME --include "flax*" --exclude "tf*"
+        huggingface-cli download --resume-download --local-dir $LOCAL_DIR --local-dir-use-symlinks False $MODEL_NAME --exclude "flax*" --exclude "tf*"
         # huggingface-cli download --resume-download --local-dir $LOCAL_DIR --local-dir-use-symlinks False $MODEL_NAME
 
         # 检查命令的返回值 $? 如果为 0 则表示成功
