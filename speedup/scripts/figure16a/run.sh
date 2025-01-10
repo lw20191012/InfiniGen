@@ -1,7 +1,8 @@
 FLEXGEN_PATH=$PWD/../../flexgen # 从当前目录向上两层再进入 flexgen 目录
 # add path，增加了本地模型路径
 # MODEL_PATH="/home/onceas/liuwang/Models/opt-1.3b"
-MODEL_PATH="/home/onceas/liuwang/Models/opt-13b"
+# MODEL_PATH="/home/onceas/liuwang/Models/opt-13b"
+MODEL_PATH="/home/liuwang/Models/opt-1.3b"
 
 
 for SCHEME in "original" "int4" "h2o" "infinigen"
@@ -23,7 +24,8 @@ do
     # CMD="--model huggingface/opt-13b --percent 100 0 0 100 100 0 --overlap false --gpu-batch-size 8 --num-gpu-batches 1 --prompt-len $PROMPT_LEN --gen-len 128 --warmup-input-path pg19_firstbook.txt --test-input-path pg19_firstbook.txt"
     
     # add model, add path
-    CMD="--model $MODEL_PATH --path /home/onceas/liuwang/opt_weights --path /home/onceas/liuwang/flexgen_offload_dir --percent 100 0 0 100 100 0 --overlap false --gpu-batch-size 8 --num-gpu-batches 1 --prompt-len $PROMPT_LEN --gen-len 128 --warmup-input-path pg19_firstbook.txt --test-input-path pg19_firstbook.txt"
+    CMD="--model $MODEL_PATH --path /home/liuwang/opt_weights --path /home/liuwang/flexgen_offload_dir --percent 100 0 0 100 100 0 --overlap false --gpu-batch-size 8 --num-gpu-batches 1 --prompt-len $PROMPT_LEN --gen-len 128 --warmup-input-path pg19_firstbook.txt --test-input-path pg19_firstbook.txt"
+    # CMD="--model $MODEL_PATH --path /home/onceas/liuwang/opt_weights --path /home/onceas/liuwang/flexgen_offload_dir --percent 100 0 0 100 100 0 --overlap false --gpu-batch-size 8 --num-gpu-batches 1 --prompt-len $PROMPT_LEN --gen-len 128 --warmup-input-path pg19_firstbook.txt --test-input-path pg19_firstbook.txt"
     # # 修改
     # CMD="--model $MODEL_PATH --path /opt/lw/InfiniGen/opt_weights --percent 100 0 100 0 100 0 --overlap false --gpu-batch-size 8 --num-gpu-batches 1 --prompt-len $PROMPT_LEN --gen-len 128 --warmup-input-path pg19_firstbook.txt --test-input-path pg19_firstbook.txt"
 
