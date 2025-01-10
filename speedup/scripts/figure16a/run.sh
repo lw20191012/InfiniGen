@@ -2,7 +2,8 @@ FLEXGEN_PATH=$PWD/../../flexgen # 从当前目录向上两层再进入 flexgen �
 # add path，增加了本地模型路径
 # MODEL_PATH="/home/onceas/liuwang/Models/opt-1.3b"
 # MODEL_PATH="/home/onceas/liuwang/Models/opt-13b"
-MODEL_PATH="/home/liuwang/Models/opt-1.3b"
+# MODEL_PATH="/home/liuwang/Models/opt-1.3b"
+MODEL_PATH="/home/liuwang/Models/opt-6.7b"
 
 
 for SCHEME in "original" "int4" "h2o" "infinigen"
