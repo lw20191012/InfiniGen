@@ -6,7 +6,8 @@ export HF_ENDPOINT=https://hf-mirror.com
 MODELS=(
     "facebook/opt-1.3b"
     "facebook/opt-6.7b"
-    "facebook/opt-13b")
+    "facebook/opt-13b"
+    "facebook/opt-30b")
 
 # 循环遍历每个模型
 for MODEL_NAME in "${MODELS[@]}"; do
