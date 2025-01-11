@@ -4,8 +4,8 @@ FLEXGEN_PATH=$PWD/../../flexgen # 从当前目录向上两层再进入 flexgen �
 # MODEL_PATH="/home/onceas/liuwang/Models/opt-13b"
 # MODEL_PATH="/home/liuwang/Models/opt-1.3b"
 # MODEL_PATH="/home/liuwang/Models/opt-6.7b"
-MODEL_PATH="/home/liuwang/Models/opt-13b"
-# MODEL_PATH="/home/liuwang/Models/opt-30b"
+# MODEL_PATH="/home/liuwang/Models/opt-13b"
+MODEL_PATH="/home/liuwang/Models/opt-30b"
 
 
 for SCHEME in "original" "int4" "h2o" "infinigen"
