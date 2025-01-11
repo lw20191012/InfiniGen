@@ -3,8 +3,8 @@ FLEXGEN_PATH=$PWD/../../flexgen
 # MODEL_PATH="/home/onceas/liuwang/Models/opt-1.3b"
 # MODEL_PATH="/home/onceas/liuwang/Models/opt-13b"
 # MODEL_PATH="/home/liuwang/Models/opt-1.3b"
-# MODEL_PATH="/home/liuwang/Models/opt-6.7b"
-MODEL_PATH="/home/liuwang/Models/opt-13b"
+MODEL_PATH="/home/liuwang/Models/opt-6.7b"
+# MODEL_PATH="/home/liuwang/Models/opt-13b"
 # MODEL_PATH="/home/liuwang/Models/opt-30b"
 
 
