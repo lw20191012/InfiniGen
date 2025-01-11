@@ -62,8 +62,7 @@ for MODEL_NAME in "${MODELS[@]}"; do
             --local-dir $LOCAL_DIR \
             --local-dir-use-symlinks False \
             $MODEL_NAME \
-            --exclude "flax*" \
-            --exclude "tf*"
+            --exclude "flax*" "tf*"
 
         # 检查命令的返回值 $? 如果为 0 则表示成功
         if [ $? -eq 0 ]; then
