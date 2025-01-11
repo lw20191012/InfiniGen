@@ -42,6 +42,6 @@ do
     then
       CMD=$CMD" --alpha 4 --partial-weight-ratio 0.2 --max-num-kv `expr \( $PROMPT_LEN + 128 \) / 5`"
     fi
-    CUDA_VISIBLE_DEVICES=0 python -m flexgen.flex_opt $CMD
+    CUDA_VISIBLE_DEVICES=0,1 python -m flexgen.flex_opt $CMD
   done
 done
