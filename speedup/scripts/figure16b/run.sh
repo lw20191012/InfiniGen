@@ -1,11 +1,9 @@
 FLEXGEN_PATH=$PWD/../../flexgen
 # add path，增加了本地模型路径
-# MODEL_PATH="/home/onceas/liuwang/Models/opt-1.3b"
-# MODEL_PATH="/home/onceas/liuwang/Models/opt-13b"
 # MODEL_PATH="/home/liuwang/Models/opt-1.3b"
-# MODEL_PATH="/home/liuwang/Models/opt-6.7b"
-# MODEL_PATH="/home/liuwang/Models/opt-13b"
-# MODEL_PATH="/home/liuwang/Models/opt-30b"
+MODEL_PATH="/home/liuwang/Models"
+# MODEL="opt-13b" # 1.3b, 6.7b, 13b, 30b
+USER_PATH="/home/liuwang"
 
 for SCHEME in "original" "int4" "h2o" "infinigen"
 do
@@ -21,19 +19,19 @@ do
   fi
 
   # for MODEL in "opt-6.7b" "opt-13b" "opt-30b"
-  for MODEL in "/home/liuwang/Models/opt-1.3b" "/home/liuwang/Models/opt-6.7b" "/home/liuwang/Models/opt-13b"
+  for MODEL in "opt-1.3b" "opt-6.7b" "opt-13b"
   do
     # CMD="--model huggingface/$MODEL"
-    CMD="--model $MODEL"
+    CMD="--model $MODEL_PATH/$MODEL --path $USER_PATH/opt_weights --offload-dir $USER_PATH/flexgen_offload_dir"
     # if [ "$MODEL" = "opt-30b" ]
-    if [ "$MODEL" = "/home/liuwang/Models/opt-13b" ]
+    if [ "$MODEL" = "opt-13b" ]
     then
       CMD=$CMD" --percent 70 30 0 100 100 0"
     else
       CMD=$CMD" --percent 100 0 0 100 100 0"
     fi
     # CMD=$CMD" --overlap false --gpu-batch-size 4 --num-gpu-batches 1 --prompt-len 1920 --gen-len 128 --warmup-input-path pg19_firstbook.txt --test-input-path pg19_firstbook.txt"
-    CMD=$CMD" --path /home/liuwang/opt_weights --offload-dir /home/liuwang/flexgen_offload_dir --overlap false --gpu-batch-size 4 --num-gpu-batches 1 --prompt-len 1920 --gen-len 128 --warmup-input-path pg19_firstbook.txt --test-input-path pg19_firstbook.txt"
+    CMD=$CMD" --overlap false --gpu-batch-size 4 --num-gpu-batches 1 --prompt-len 1920 --gen-len 128 --warmup-input-path pg19_firstbook.txt --test-input-path pg19_firstbook.txt"
     if [ "$SCHEME" = "int4" ]
     then
       CMD=$CMD" --compress-cache"
