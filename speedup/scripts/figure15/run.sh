@@ -8,7 +8,7 @@ export CUDA_HOME="/usr/local/cuda-12"
 # add path，增加了本地模型路径
 # MODEL_PATH="/home/liuwang/Models/opt-1.3b"
 MODEL_PATH="/home/liuwang/Models"
-MODEL="opt-13b" # 1.3b, 6.7b, 13b, 30b
+MODEL="opt-1.3b" # 1.3b, 6.7b, 13b, 30b
 USER_PATH="/home/liuwang"
 
 export LD_LIBRARY_PATH=$PWD:$LD_LIBRARY_PATH
