@@ -1428,6 +1428,11 @@ def run_flexgen(args):
         opt_config.model_bytes(), cache_size, hidden_size,
         gpu_peak_mem, projected, prefill_latency, prefill_throughput,
         decode_latency, decode_throughput, total_latency, total_throughput)
+    
+    # 增加模式信息
+    with open(filename, "a") as fout:
+        fout.write("++++++++++ InfiniGen (Ours) ++++++++++" + "\n")
+        
     if args.verbose >= 1:
         print(log_str)
     # 添加 stop

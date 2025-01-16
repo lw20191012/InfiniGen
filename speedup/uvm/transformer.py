@@ -103,7 +103,7 @@ for run in range(args.runs):
 
     for i in range(n_layer):
         transformer[i].self_attn.past_key_value = None
-        if args.is_h2o:
+        if args.is_h2o:  
             transformer[i].self_attn.i = 0
             transformer[i].self_attn.acc = None
 

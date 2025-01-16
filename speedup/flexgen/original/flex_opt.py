@@ -1289,6 +1289,15 @@ def run_flexgen(args):
         opt_config.model_bytes(), cache_size, hidden_size,
         gpu_peak_mem, projected, prefill_latency, prefill_throughput,
         decode_latency, decode_throughput, total_latency, total_throughput)
+    
+    # 增加模式信息
+    if args.compress_cache:
+        with open(filename, "a") as fout:
+            fout.write("++++++++++ FlexGen + INT4 ++++++++++" + "\n")
+    else:
+        with open(filename, "a") as fout:
+            fout.write("++++++++++ FlexGen ++++++++++" + "\n")
+
     if args.verbose >= 1:
         print(log_str)
     

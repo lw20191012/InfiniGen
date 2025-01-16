@@ -12,6 +12,7 @@ class SelfAttention(nn.Module):
         bias: bool = True
     ):
         super().__init__()
+        # 输入维度需要整除头的数量
         self.embed_dim = embed_dim
         self.num_heads = num_heads
         self.head_dim = embed_dim // num_heads
@@ -29,7 +30,7 @@ class SelfAttention(nn.Module):
         self.out_proj = nn.Linear(embed_dim, embed_dim, bias=bias, dtype=torch.float16, device=torch.device('cuda'))
         
         self.past_key_value = None
-        self.src_s = 0
+        self.src_s = 0 # 当前序列长度，追踪时间步进
 
 
     def _shape(self, tensor: torch.Tensor, seq_len: int, bsz: int):

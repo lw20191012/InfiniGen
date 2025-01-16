@@ -29,9 +29,9 @@ class SelfAttention(nn.Module):
         self.q_proj = nn.Linear(embed_dim, embed_dim, bias=bias, dtype=torch.float16, device=torch.device('cuda'))
         self.out_proj = nn.Linear(embed_dim, embed_dim, bias=bias, dtype=torch.float16, device=torch.device('cuda'))
 
-        self.acc = None
-        self.ratio = h2o_ratio
-        self.i = 0
+        self.acc = None # 累计的注意力得分
+        self.ratio = h2o_ratio 
+        self.i = 0 # 标记当前迭代次数
         self.past_key_value = None
 
     def _shape(self, tensor: torch.Tensor, seq_len: int, bsz: int):
