@@ -1,4 +1,10 @@
 UVM_PATH=$PWD/../../uvm
+
+# 保存当前 CUDA_HOME 值
+ORIGINAL_CUDA_HOME=$CUDA_HOME
+# 设置临时 CUDA_HOME 值
+export CUDA_HOME="/usr/local/cuda-12"
+
 # add path，增加了本地模型路径
 # MODEL_PATH="/home/liuwang/Models/opt-1.3b"
 MODEL_PATH="/home/liuwang/Models"
@@ -53,3 +59,6 @@ do
     python -m flexgen.flex_opt $CMD
   done
 done
+
+# 恢复原始 CUDA_HOME 值
+export CUDA_HOME=$ORIGINAL_CUDA_HOME
