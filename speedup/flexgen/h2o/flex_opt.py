@@ -1378,7 +1378,12 @@ def run_flexgen(args):
     # if args.verbose >= 1:
     #     print(log_str)
     # 修改写日志
-    log_str = write_benchmark_log(filename, prompt_len, gen_len, 
+    # 取模型名称
+    if "/" in args.model:
+        modelname = args.model.split("/")[-1]
+    modelname = modelname.lower()    
+    
+    log_str = write_benchmark_log(modelname, filename, prompt_len, gen_len, 
         opt_config.model_bytes(), cache_size, hidden_size,
         gpu_peak_mem, projected, prefill_latency, prefill_throughput,
         decode_latency, decode_throughput, total_latency, total_throughput)
