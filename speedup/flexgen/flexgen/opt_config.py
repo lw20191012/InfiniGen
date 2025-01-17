@@ -249,7 +249,7 @@ def download_opt_weights(model_name, path):
     import torch # 用于加载 PyTorch 模型的 .bin 格式文件
 
     # test
-    print("********the model name when download the model: ", model_name)
+    print("++++++++++ the model name when download the model ++++++++++", model_name)
     
     # add: 本地存放模型的文件夹中是否存在该模型
     # model_dir = "/home/onceas/liuwang/Models"
@@ -277,14 +277,15 @@ def download_opt_weights(model_name, path):
         folder = snapshot_download(hf_model_name, allow_patterns="*.bin") # 从 Hugging Face 下载 .bin 格式的模型权重
 
     # test
-    print("********the floder name: ", folder)
+    print("++++++++++ the floder name ++++++++++", folder)
 
 
 
     bin_files = glob.glob(os.path.join(folder, "*.bin"))
 
     if "/" in model_name:
-        model_name = model_name.split("/")[1].lower()
+        # model_name = model_name.split("/")[1].lower()
+        model_name = model_name.split("/")[-1].lower()
     path = os.path.join(path, f"{model_name}-np")
     path = os.path.abspath(os.path.expanduser(path))
     os.makedirs(path, exist_ok=True)
