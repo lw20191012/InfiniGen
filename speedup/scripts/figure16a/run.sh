@@ -1,3 +1,4 @@
+#!/bin/bash
 FLEXGEN_PATH=$PWD/../../flexgen # 从当前目录向上两层再进入 flexgen 目录
 # add path，增加了本地模型路径
 # MODEL_PATH="/home/liuwang/Models/opt-1.3b"

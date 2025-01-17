@@ -1,3 +1,4 @@
+#!/bin/bash
 UVM_PATH=$PWD/../../uvm
 
 # 保存当前 CUDA_HOME 值
