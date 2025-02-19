@@ -252,7 +252,7 @@ def download_opt_weights(model_name, path):
     print("++++++++++ the model name when download the model ++++++++++", model_name)
     
     # add: 本地存放模型的文件夹中是否存在该模型
-    # model_dir = "/home/onceas/liuwang/Models"
+    # model_dir = "/home/liuwang/Models"
     model_dir = "/home/liuwang/Models"
     model_path = os.path.join(model_dir, model_name) 
     # add: 原来是从facebook上下载
